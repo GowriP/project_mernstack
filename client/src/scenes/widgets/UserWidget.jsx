@@ -33,7 +33,7 @@ const UserWidget = ({ userId, picturePath}) => {
     useEffect(() => {
         getUser();
     },[])
-    console.log("USER", user)
+    
     if (!user) {
         return null;
     }
