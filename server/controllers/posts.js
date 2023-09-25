@@ -17,7 +17,7 @@ export const createPost = async(req, res) => {
             likes : { },
             comments: []
         })
-
+        console.log("CREATE POST CALL")
         await newPost.save();
 
         const post = await Post.find();
@@ -32,6 +32,7 @@ export const createPost = async(req, res) => {
 export const getFeedPosts = async(req, res) => {
     try {
         const post = await Post.find();
+        console.log("GET FEED POSTS CALL")
         res.status(201).json(post)
     }
     catch (err) {
@@ -43,6 +44,7 @@ export const getUserPosts = async(req, res) => {
     try {
         const { userId } = req.params;
         const post = await Post.find({ userId });
+        console.log("GET USER POSTS CALL")
         res.status(201).json(post)
     }
     catch (err) {
